@@ -1,11 +1,10 @@
 import './App.css';
+import TodoBack from './components/TodoBack';
 
 
 function App() {
   return (
-    <div>
-      
-    </div>
+      <TodoBack>안녕하세요</TodoBack>
   );
 }
 
