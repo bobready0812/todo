@@ -1,9 +1,10 @@
 import React from "react";
+import './TodoBack.css';
 
-const TodoBack = ({children}) => {
+const TodoBack = ({children, todoLength}) => {
     return (
-        <div>
-            <div>오늘의 할일 (0)</div>
+        <div className="TodoBack">
+            <div className="title">오늘의 할일 ({todoLength})</div>
             <div>{children}</div>
         </div>
     )
