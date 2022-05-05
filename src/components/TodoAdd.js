@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import {MdAddCircle} from 'react-icons/md';
 import './TodoAdd.css';
 
-const TodoAdd = ({onAddToggle}) => {
+const TodoAdd = ({onAddToggle, onAddTodo}) => {
+    const [value,setValue] = useState("");
+    const onChange = (e) => {
+        setValue(e.target.value);
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        onAddTodo(value);
+        setValue("");
+        onAddToggle();
+    }
     return ( 
     <div>
         <div className="background" onClick={onAddToggle}></div>
-        <form>
-            <input></input>
+        <form onSubmit={onSubmit}>
+            <input placeholder="Write Todo" value={value} onChange={onChange}></input>
             <button type="submit"><MdAddCircle /></button>
         </form>
     </div>
