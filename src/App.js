@@ -3,6 +3,7 @@ import './App.css';
 import TodoBack from './components/TodoBack';
 import TodoList from './components/TodoList';
 import {MdAddCircle} from 'react-icons/md'
+import TodoAdd from './components/TodoAdd';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <div className='add-todo-button'>
           <MdAddCircle/>
         </div>
+        <TodoAdd/>
       </TodoBack>
   );
 }
