@@ -7,7 +7,7 @@ const TodoList = ({todos, onCheckToggle}) => {
     return (
     <div className="TodoList">
         {todos.map(todo => (
-            <TodoItem todo={todo} key={todo.id} onChangeToggle={onCheckToggle}/>
+            <TodoItem todo={todo} key={todo.id} onCheckToggle={onCheckToggle}/>
         ))}
     </div>
     )
