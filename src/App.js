@@ -7,6 +7,7 @@ import TodoAdd from './components/TodoAdd';
 
 
 function App() {
+  const [addToggle, setAddToggle] = useState(false);
   const [todos, setTodos] = useState([
     {
       id:1,
@@ -23,14 +24,18 @@ function App() {
       text:"할일 3",
       checked:true,
     },
-  ])
+  ]);
+
+  const onAddToggle = () => {
+    setAddToggle(prev => !prev);
+  }
   return (
       <TodoBack todoLength={todos.length}>
         <TodoList todos={todos}/>
-        <div className='add-todo-button'>
+        <div className='add-todo-button' onClick={onAddToggle}>
           <MdAddCircle/>
         </div>
-        <TodoAdd/>
+        {addToggle && <TodoAdd onAddToggle={onAddToggle}/>}
       </TodoBack>
   );
 }
