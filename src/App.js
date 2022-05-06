@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import TodoBack from './components/TodoBack';
 import TodoList from './components/TodoList';
@@ -10,14 +10,7 @@ function App() {
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [addToggle, setAddToggle] = useState(false);
   const [todos, setTodos] = useState([]);
-  
-  const saveTodos = () => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }
 
-  const getTodos = () => {
-    localStorage.getItem('todos');
-  }
   
   const onCheckToggle = (id) => {
     setTodos(todos => todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked } : todo))
@@ -53,7 +46,7 @@ function App() {
       }
       setTodos(todos => todos.concat(todo));
       id++
-    }
+    } 
   }
   return (
       <TodoBack todoLength={todos.length}>
@@ -62,6 +55,7 @@ function App() {
           <MdAddCircle/>
         </div>
         {addToggle && <TodoAdd 
+        // saveTodos={saveTodos}
         onRemove={onRemove}
         onChangeSelectedTodo={onChangeSelectedTodo} 
         selectedTodo={selectedTodo} 

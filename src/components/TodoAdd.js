@@ -3,7 +3,7 @@ import {MdAddCircle} from 'react-icons/md';
 import { TiTrash, TiPencil} from 'react-icons/ti';
 import './TodoAdd.css';
 
-const TodoAdd = ({onAddToggle, onUpdate, onAddTodo, selectedTodo, onChangeSelectedTodo, onRemove}) => {
+const TodoAdd = ({onAddToggle, onUpdate, onAddTodo, selectedTodo, onChangeSelectedTodo, onRemove,}) => {
     const [value,setValue] = useState("");
     const onChange = (e) => {
         setValue(e.target.value);
@@ -14,6 +14,7 @@ const TodoAdd = ({onAddToggle, onUpdate, onAddTodo, selectedTodo, onChangeSelect
         onAddTodo(value);
         setValue("");
         onAddToggle();
+        // saveTodos();
     };
     useEffect(() => {
         if(selectedTodo) {
