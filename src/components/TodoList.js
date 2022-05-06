@@ -3,7 +3,6 @@ import TodoItem from "./TodoItem";
 import "./TodoList.css";
 
 const TodoList = ({todos, onCheckToggle, onAddToggle, onChangeSelectedTodo}) => {
-     
 
     return (
     <div className="TodoList">
