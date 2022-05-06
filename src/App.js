@@ -11,6 +11,14 @@ function App() {
   const [addToggle, setAddToggle] = useState(false);
   const [todos, setTodos] = useState([]);
   
+  const saveTodos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  const getTodos = () => {
+    localStorage.getItem('todos');
+  }
+  
   const onCheckToggle = (id) => {
     setTodos(todos => todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked } : todo))
   }
