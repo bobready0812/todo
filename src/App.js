@@ -9,7 +9,17 @@ let id = 0;
 function App() {
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [addToggle, setAddToggle] = useState(false);
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    if(typeof window !== "undefined") {
+      const saved = localStorage.getItem('todos');
+      
+      if(saved !== null) {
+        return JSON.parse(saved);
+      } else {
+        return [];
+      }
+    }
+  });
   
 
   const onCheckToggle = (id) => {

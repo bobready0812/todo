@@ -1,11 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import TodoItem from "./TodoItem";
 import "./TodoList.css";
 
 const TodoList = ({todos, onCheckToggle, onAddToggle, onChangeSelectedTodo, setTodos}) => {
+     
+    useEffect(()=> {
+        saveTodos();
+    }, [todos]);
 
- 
-
+    const saveTodos = () => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
+     
     return (
     <div className="TodoList">
         {todos.map(todo => (
