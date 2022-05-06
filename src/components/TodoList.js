@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import TodoItem from "./TodoItem";
 import "./TodoList.css";
 
-const TodoList = ({todos, onCheckToggle, onAddToggle, onChangeSelectedTodo}) => {
+const TodoList = ({todos, onCheckToggle, onAddToggle, onChangeSelectedTodo, setTodos}) => {
 
-    useEffect(() => {
-        console.log(todos);
-    }, [todos]);
+ 
 
     return (
     <div className="TodoList">

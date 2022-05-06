@@ -44,13 +44,14 @@ function App() {
         text,
         checked: false,
       }
-      setTodos(todos => todos.push(todo));
+      setTodos(todos => todos.concat(todo));
+      console.log(todos);
       id++
     } 
   }
   return (
       <TodoBack todoLength={todos.length}>
-        <TodoList todos={todos} onCheckToggle={onCheckToggle} onChangeSelectedTodo={onChangeSelectedTodo} onAddToggle={onAddToggle}/>
+        <TodoList setTodos={setTodos} todos={todos} onCheckToggle={onCheckToggle} onChangeSelectedTodo={onChangeSelectedTodo} onAddToggle={onAddToggle}/>
         <div className='add-todo-button' onClick={onAddToggle}>
           <MdAddCircle/>
         </div>
