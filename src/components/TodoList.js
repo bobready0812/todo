@@ -4,6 +4,10 @@ import "./TodoList.css";
 
 const TodoList = ({todos, onCheckToggle, onAddToggle, onChangeSelectedTodo}) => {
 
+    useEffect(() => {
+        console.log(todos);
+    }, [todos]);
+
     return (
     <div className="TodoList">
         {todos.map(todo => (
