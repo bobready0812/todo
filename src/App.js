@@ -4,6 +4,7 @@ import TodoBack from './components/TodoBack';
 import TodoList from './components/TodoList';
 import {MdAddCircle} from 'react-icons/md'
 import TodoAdd from './components/TodoAdd';
+import New from './components/new';
 
 let id = 0;
 function App() {
@@ -75,7 +76,7 @@ function App() {
         onUpdate={onUpdate}
         onAddTodo={onAddTodo}/>}
         
-       
+       <New />
       </TodoBack>
   );
 }
