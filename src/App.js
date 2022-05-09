@@ -20,7 +20,8 @@ function App() {
       }
     }
   });
-  
+
+
 
   const onCheckToggle = (id) => {
     setTodos(todos => todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked } : todo))
@@ -73,6 +74,7 @@ function App() {
         onAddToggle={onAddToggle} 
         onUpdate={onUpdate}
         onAddTodo={onAddTodo}/>}
+        
        
       </TodoBack>
   );
