@@ -5,3 +5,5 @@ const New = () => {
         <input type="text"></input> 
     )
 }
+
+export default New;
